@@ -1,0 +1,43 @@
+# Asus configuration options
+
+config MACH_ASUS
+	bool "Asus device"
+	help
+	  Support for Asus products
+
+config MACH_ASUS_SDM660
+	bool "Asus SDM660"
+	depends on ARCH_SDM660
+	select MACH_ASUS
+	help
+	  Support for SDM660 Asus variants
+
+config MACH_ASUS_SDM630
+	bool "Asus SDM630"
+	depends on ARCH_SDM630
+	select MACH_ASUS
+	help
+	  Support for SDM630 Asus variants
+
+menu "Asus board selection"
+
+config MACH_ASUS_ZE620KL
+	bool "ZE620KL board"
+	select MACH_ASUS_SDM660
+	help
+	  Support for ZenFone 5 (ara)
+
+config MACH_ASUS_ZE554KL
+	bool "ZE554KL board"
+	select MACH_ASUS_SDM660
+	select MACH_ASUS_SDM630
+	help
+	  Support for ZenFone 4 (titan)
+
+config MACH_ASUS_ZC600KL
+	bool "ZC600KL board"
+	select MACH_ASUS_SDM630
+	help
+	  Support for ZenFone 5 Lite (5Q)
+
+endmenu
