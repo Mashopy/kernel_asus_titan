@@ -27,9 +27,9 @@ else
 acenic-objs := acenic/tg1.bin acenic/tg2.bin
 endif
 fw-shipped-$(CONFIG_ACENIC) += $(acenic-objs)
-ifeq ($(ASUS_BUILD_PROJECT),ZC600KL)
+ifdef CONFIG_MACH_ASUS_ZC600KL
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_FW_UPDATE_V27) += synaptics/startup_fw_update.img
-else ifeq ($(ASUS_BUILD_PROJECT),ZE554KL)
+else ifdef CONFIG_MACH_ASUS_ZE554KL
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_FW_UPDATE) += synaptics/Asus_Titan_424F0034.img
 endif
 fw-shipped-$(CONFIG_ADAPTEC_STARFIRE) += adaptec/starfire_rx.bin \

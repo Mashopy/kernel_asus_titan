@@ -182,7 +182,7 @@ endif
 
 dtb-$(CONFIG_ARCH_MSMHAMSTER) += msmhamster-rumi.dtb
 
-ifeq ($(ASUS_BUILD_PROJECT),ZE620KL)
+ifdef CONFIG_MACH_ASUS_ZE620KL
 dtb-$(CONFIG_ARCH_SDM660) += \
 	sdm660-cdp.dtb \
 	sdm660-mtp.dtb \
@@ -190,7 +190,7 @@ dtb-$(CONFIG_ARCH_SDM660) += \
 	ara-er-sdm636-qrd.dtb \
 	ara-er-oc-sdm636-qrd.dtb
 
-else ifeq ($(ASUS_BUILD_PROJECT),ZE554KL)
+else ifdef CONFIG_MACH_ASUS_ZE554KL
 dtb-$(CONFIG_ARCH_SDM660) += \
 	sdm660-cdp.dtb \
 	sdm660-mtp.dtb \
@@ -201,13 +201,11 @@ dtb-$(CONFIG_ARCH_SDM630) +=  \
 	ze554kl-er-sdm630-cdp.dtb \
 	sdm630-pm660a-qrd.dtb
 
-else ifeq ($(ASUS_BUILD_PROJECT),ZC600KL)
-
+else ifdef CONFIG_MACH_ASUS_ZC600KL
 dtb-$(CONFIG_ARCH_SDM630) +=  \
 	zc600kl-sdm630-pm660l-qrd.dtb
 
 else
-
 dtb-$(CONFIG_ARCH_SDM660) += sdm660-sim.dtb \
 	sdm660-internal-codec-cdp.dtb \
 	sdm660-internal-codec-mtp.dtb \
@@ -316,7 +314,7 @@ dtb-$(CONFIG_ARCH_SDM630) += sdm630-rumi.dtb \
 	sdm630-pm660a-headset-jacktype-no-cdp.dtb \
 	sdm630-pm660a-headset-jacktype-no-rcm.dtb
 
-endif #end of ifeq ($(ASUS_BUILD_PROJECT),ZE620KL)
+endif
 
 ifeq ($(CONFIG_ARM64),y)
 always          := $(dtb-y)

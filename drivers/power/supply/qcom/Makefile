@@ -1,7 +1,7 @@
 obj-$(CONFIG_QPNP_SMBCHARGER)	+= qpnp-smbcharger.o batterydata-lib.o pmic-voter.o
 obj-$(CONFIG_QPNP_FG)		+= qpnp-fg.o
 
-ifeq ($(ASUS_BUILD_PROJECT),ZC600KL)
+ifdef CONFIG_MACH_ASUS_ZC600KL
 obj-$(CONFIG_QPNP_FG_GEN3)     += qpnp-fg-gen3_zc600kl.o fg-memif.o fg-util.o
 else
 obj-$(CONFIG_QPNP_FG_GEN3)     += qpnp-fg-gen3.o fg-memif.o fg-util.o
@@ -13,11 +13,11 @@ obj-$(CONFIG_MSM_BCL_CTL)	+= msm_bcl.o
 obj-$(CONFIG_MSM_BCL_PERIPHERAL_CTL) += bcl_peripheral.o
 obj-$(CONFIG_BATTERY_BCL) += battery_current_limit.o
 
-ifeq ($(ASUS_BUILD_PROJECT),ZE620KL)
+ifdef CONFIG_MACH_ASUS_ZE620KL
 obj-$(CONFIG_QPNP_SMB2)		+= step-chg-jeita.o battery.o qpnp-smb2.o smb-lib.o pmic-voter.o storm-watch.o
 obj-$(CONFIG_SMB138X_CHARGER)	+= battery.o smb138x-charger.o smb-lib.o pmic-voter.o storm-watch.o
 
-else ifeq ($(ASUS_BUILD_PROJECT),ZC600KL)
+else ifdef CONFIG_MACH_ASUS_ZC600KL
 obj-$(CONFIG_QPNP_SMB2)		+= step-chg-jeita.o battery.o qpnp-smb2_zc600kl.o smb-lib_zc600kl.o pmic-voter.o storm-watch.o
 obj-$(CONFIG_SMB138X_CHARGER)	+= battery.o smb138x-charger.o smb-lib_zc600kl.o pmic-voter.o storm-watch.o
 

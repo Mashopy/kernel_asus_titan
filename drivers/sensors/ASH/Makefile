@@ -1,4 +1,4 @@
-ifneq ($(ASUS_BUILD_PROJECT),ZC600KL)
+ifdef CONFIG_MACH_ASUS_SDM660
 obj-y	+=ASH_ATTR/ 
 obj-y	+=ASH_Report/
 obj-y	+=ASH_Factory/
