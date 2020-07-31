@@ -19,6 +19,10 @@
 *.so.dbg
 *.mod.c
 *.i
+!drivers/input/touchscreen/focaltech_touch/include/pramboot/*.i
+!drivers/input/touchscreen/focaltech_touch/include/firmware/*.i
+!drivers/input/touchscreen/focaltech_touch_ZE554KL/include/pramboot/*.i
+!drivers/input/touchscreen/focaltech_touch_ZE554KL/include/firmware/*.i
 *.lst
 *.symtypes
 *.order
