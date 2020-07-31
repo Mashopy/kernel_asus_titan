@@ -843,11 +843,8 @@ include scripts/Makefile.kasan
 include scripts/Makefile.extrawarn
 include scripts/Makefile.ubsan
 
-ifneq ($(BUILD_NUMBER),)
-	KBUILD_CPPFLAGS += -DASUS_SW_VER=\"$(BUILD_NUMBER)\"
-else
-	KBUILD_CPPFLAGS += -DASUS_SW_VER=\"$(ASUS_BUILD_PROJECT)_ENG\"
-endif
+KBUILD_CPPFLAGS += -DASUS_SW_VER=\"lineage\"
+
 # Add any arch overrides and user supplied CPPFLAGS, AFLAGS and CFLAGS as the
 # last assignments
 KBUILD_CPPFLAGS += $(ARCH_CPPFLAGS) $(KCPPFLAGS)
