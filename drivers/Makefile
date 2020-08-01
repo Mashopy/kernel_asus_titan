@@ -184,24 +184,3 @@ obj-$(CONFIG_BIF)		+= bif/
 obj-$(CONFIG_SENSORS_SSC)	+= sensors/
 obj-$(CONFIG_ESOC)              += esoc/
 obj-$(CONFIG_TEE)		+= tee/
-
-#Tuxera
-ifdef CONFIG_MACH_ASUS_ZE620KL
-	ifdef CONFIG_TUXERA_USERDEBUG
-		obj-y				+= exfat/ze620kl/userdebug/
-	else
-		obj-y				+= exfat/ze620kl/user/
-	endif
-else ifdef CONFIG_MACH_ASUS_ZE554KL
-	ifdef CONFIG_TUXERA_USERDEBUG
-		obj-y				+= exfat/ze554kl/userdebug/
-	else
-		obj-y				+= exfat/ze554kl/user/
-	endif
-else ifdef CONFIG_MACH_ASUS_ZC600KL
-	ifdef CONFIG_TUXERA_USERDEBUG
-		obj-y				+= exfat/zc600kl/userdebug/
-	else
-		obj-y				+= exfat/zc600kl/user/
-	endif
-endif
