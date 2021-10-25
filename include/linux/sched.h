@@ -1726,7 +1726,7 @@ struct task_struct {
 
 	struct mm_struct *mm, *active_mm;
 	/* per-thread vma caching */
-	u32 vmacache_seqnum;
+	u64 vmacache_seqnum;
 	struct vm_area_struct *vmacache[VMACACHE_SIZE];
 #if defined(SPLIT_RSS_COUNTING)
 	struct task_rss_stat	rss_stat;
@@ -1810,6 +1810,8 @@ struct task_struct {
 #ifdef CONFIG_CPU_FREQ_TIMES
 	u64 *time_in_state;
 	unsigned int max_state;
+	u64 *concurrent_active_time;
+	u64 *concurrent_policy_time;
 #endif
 	struct prev_cputime prev_cputime;
 #ifdef CONFIG_VIRT_CPU_ACCOUNTING_GEN
@@ -2116,6 +2118,8 @@ struct task_struct {
 	unsigned int	sequential_io;
 	unsigned int	sequential_io_avg;
 #endif
+	int binder_sender_pid;
+	int binder_sender_tid;
 #ifdef CONFIG_DEBUG_ATOMIC_SLEEP
 	unsigned long	task_state_change;
 #endif
